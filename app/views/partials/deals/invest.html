@@ -1,0 +1,47 @@
+<section class="page deal">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                <h1>Invest</h1>
+                <h2>{{deal.name}}</h2>
+                <div data-ng-show="isInvested()">
+                    <p>
+                        You have previously invested ${{investment.amount}} in {{deal.name}}.
+                    </p>
+                    <p>
+                        You can view your all your investments from your <a href="/dashboard">dashboard</a>.
+                    </p>
+                </div>
+                <div data-ng-show="!isInvested()">
+                    <div data-ng-switch="invested">
+                        <div data-ng-switch-when="true">
+                            <p>
+                                Congratulations! You have invested ${{investment.amount}} in {{deal.name}}.
+                            </p>
+                            <p>
+                                You can view your all your investments from your <a href="/dashboard">dashboard</a>.
+                            </p>
+                        </div>
+                        <div data-ng-switch-default="">
+                            <form novalidate name="form" class="centered" data-ng-submit="invest(form)">
+                                <!--[if IE 8]><h5>Investment Amount</h5><![endif]-->
+                                <p class="alert alert-danger" ng-show="form.amount.$error.required && submitted">
+                                    Please enter a valid amount.
+                                </p>
+                                <p class="alert alert-danger" ng-show="form.amount.$error.min && submitted">
+                                    Minimum amount is $10000
+                                </p>
+                                <label for="amount">
+                                    <i class="fa fa-money"></i>
+                                </label>
+                                <input type="number" name="amount" class="form-control" ng-model="investment.amount" placeholder="Amount" min="10000" required />
+                                <button type="submit" class="btn btn-sm">Invest</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>

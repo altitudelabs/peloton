@@ -1,0 +1,89 @@
+<section class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <h1>
+                        Welcome, Sponsors
+                    </h1>
+                </div>
+                <hr>
+                <p>
+                    Peloton Street welcomes potential real estate owners, operator, developers, and entrepreneurs (Sponsors) to our online real estate marketplace. We are also real estate professionals that understand the headache of regulatory requirements when raising capital taking you away from what you do best. Lucky for you, we have taken on the burden of untangling the regulatory web, providing you with an efficient, legal means to raise funds from accredited investors.
+                </p>
+                <h1>
+                    The Fundraising Process
+                </h1>
+                <ol>
+                    <li>
+                        Apply for Access. Complete a free online profile to let us know about you and your track record. During this process, we collect information from you and will complete a pre-vetting approval process.
+                    </li>
+                    <li>
+                        Create a Sponsor Profile. After you are approved to enter the site, we will gather information from you to create a Sponsor profile. This will enable our investors to learn a bit about you, your investment style, track record, and upcoming projects. This provides you with a powerful brand building opportunity and immediate access to a network of accredited investors and qualified purchasers.
+                    </li>
+                    <li>
+                        List a Deal. Once you have identified an investment opportunity that you would like to raise debt or equity for, our team works with you to structure the deal and its economic profile. Our team is skilled at preparing the investment entity structure through our efficient ‘series LLC’ model. We work together to compile the property description, financial information, and deal documents, which are uploaded directly onto our site.
+                    </li>
+                    <li>
+                        Fundraising Begins. After your deal is listed, we continue to solicit the deal and answer questions on your behalf to ensure the offering amount is reached. Our team handles all regulatory requirements related to investor accreditation, marketing, and transferring of funds; saving you time and resources. Once the funding goal is reached, we electronically transfer the funds from escrow and make a single contribution to the “cap table” or “sources and uses” of your deal, depending on how we have agreed to structure our investment.
+                    </li>
+                    <li>
+                        Focus on What You Do Best. We believe crowd-investing is a win-win for our Sponsors. Peloton Street provides you with immediate access to accredited investors all hungry for great investment opportunities. We allow you focus on what you do best, while we obtain funding for your deal safely, legally, quickly, and efficiently. As registered representatives of WealthForge, LLC, a broker-dealer and member of FINRA and SIPC*, we are real estate investment professionals who not only understand the regulatory landscape but also take the headache out of raising capital.
+                    </li>
+                </ol>
+                <hr>
+                <h1>
+                    Contact Us to Get Started
+                </h1>
+                <div data-ng-switch="emailSent" data-ng-controller="ContactController">
+                    <div data-ng-switch-when="true">
+                        <p>
+                            Thank you. We'll be in touch shortly.
+                        </p>
+                    </div>
+                    <div data-ng-switch-default="">
+                        <form novalidate name="form" class="centered" data-ng-submit="submitContact(form)">
+                            <!--[if IE 8]><h5>Name</h5><![endif]-->
+                            <p class="alert alert-danger" ng-show="form.name.$error.required && submitted">
+                                Name is Required
+                            </p>
+                            <label for="name">
+                                <i class="fa fa-user"></i>
+                            </label>
+                            <input type="text" name="name" class="form-control" ng-model="contact.name" placeholder="Name" required />
+                            <!--[if IE 8]><h5>Company</h5><![endif]-->
+                            <label for="company">
+                                <i class="fa fa-building-o"></i>
+                            </label>
+                            <input type="text" name="name" class="form-control" ng-model="contact.company" placeholder="Company" required />
+                            <!--[if IE 8]><h5>Phone Number</h5><![endif]-->
+                            <label for="phone">
+                                <i class="fa fa-phone"></i>
+                            </label>
+                            <input type="text" name="name" class="form-control" ng-model="contact.phone" placeholder="Phone Number" required />
+                            <!--[if IE 8]><h5>Email</h5><![endif]-->
+                            <p class="alert alert-danger" ng-show="form.email.$error.email && submitted">
+                                Invalid email
+                            </p>
+                            <p class="alert alert-danger" ng-show="form.email.$error.required && submitted">
+                                Email is Required
+                            </p>
+                            <label for="email">
+                                <i class="fa fa-envelope-o"></i>
+                            </label>
+                            <input type="email" name="email" class="form-control" ng-model="contact.email" placeholder="Email" required />
+                            <!--[if IE 8]><h5>Message</h5><![endif]-->
+                            <label for="message">
+                                <i class="fa fa-pencil"></i>
+                            </label>
+                            <textarea name="message" class="form-control" ng-model="contact.message" placeholder="Message"></textarea>
+                            <div class="actions">
+                                <button type="submit" class="btn btn-sm">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

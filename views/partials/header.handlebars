@@ -1,0 +1,18 @@
+<header>
+    <div class="wrapper">
+        <a href="/" class="brand"><img src="/images/logo-crowdbite.png"></a>
+        <ul class="nav">
+            {{#if userAuthenticated}}
+                <li><a href="/deals">Investors</a></li>
+                <li><a href="/sponsors">Sponsors</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {{else}}
+                <li><a href="/team">Team</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                 <li><a href="/login">Login</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,76 @@
+<section class="page users">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Users</h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>
+                            <h4>Name</h4>
+                        </th>
+                        <th>
+                            <h4>Email</h4>
+                        </th>
+                        <th>
+                            <h4>AI</h4>
+                        </th>
+                        <th>
+                            <h4>Activated</h4>
+                        </th>
+                        <th>
+                            <h4>Suspended</h4>
+                        </th>
+                        <th>
+                            <h4>Admin</h4>
+                        </th>
+                        <th class="last">
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="user in users" data-ng-controller="UserListItemController" data-ng-class="{suspended: isDeactivated()}">
+                        <td>
+                            <a href="/users/{{user._id}}" title="View Profile and Investments">{{user.firstName}} {{user.lastName}}</a>
+                        </td>
+                        <td>
+                            {{user.email}}
+                        </td>
+                        <td>
+                            <span data-ng-switch data-on="user.accreditedInvestor">
+                                <span data-ng-switch-when="true"><i class="fa fa-check"></i></span>
+                                <span data-ng-switch-default><i class="fa fa-minus"></i></span>
+                            </span>
+                        </td>
+                        <td>
+                            <span data-ng-switch data-on="user.active">
+                                <span data-ng-switch-when="true"><i class="fa fa-check"></i></span>
+                                <span data-ng-switch-default><i class="fa fa-minus"></i></span>
+                            </span>
+                        </td>
+                        <td>
+                            <span data-ng-switch data-on="isDeactivated()">
+                                <span data-ng-switch-when="true"><i class="fa fa-check"></i></span>
+                                <span data-ng-switch-default><i class="fa fa-minus"></i></span>
+                            </span>
+                        </td>
+                        <td>
+                            <span data-ng-switch data-on="isAdmin()">
+                                <span data-ng-switch-when="true"><i class="fa fa-check"></i></span>
+                                <span data-ng-switch-default><i class="fa fa-minus"></i></span>
+                            </span>
+                        </td>
+                        <td class="last">
+                            <div data-ng-switch data-on="isDeactivated()">
+                                <button class="btn btn-sm" data-ng-switch-when="true" data-ng-click="confirmReactivate()">Unsuspend</button>
+                                <button class="btn btn-sm" data-ng-switch-default data-ng-click="confirmDeactivate()" data-ng-disabled="isDeactivateDisabled" data-ng-class="{'disabled': isDeactivateDisabled}">Suspend</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

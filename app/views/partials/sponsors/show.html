@@ -1,0 +1,128 @@
+<section class="page sponsor">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="clearfix">
+                    <div data-ng-switch="!!getLogoImageURL()" class="logo" cc-file-upload="logoImage">
+                        <img cc-image="getLogoImageURL" data-ng-switch-when="true">
+                        <div data-ng-switch-default="" class="no-logo"><i class="fa fa-camera"  data-ng-class="{true: 'fa-spinner fa-spin'}[logoImageLoading]"></i></div>
+                    </div>
+                    <h1 cc-contenteditable data-cc-contenteditable-placeholder="Sponsor Name" data-ng-model="sponsor.name"></h1>
+                </div>
+                <div data-ng-switch="!!getHeroImageURL()" class="picture"  cc-file-upload="heroImage">
+                    <img cc-image="getHeroImageURL" data-ng-switch-when="true">
+                    <div data-ng-switch-default="" class="no-picture"><i class="fa fa-camera" data-ng-class="{true: 'fa-spinner fa-spin'}[heroImageLoading]"></i></div>
+                </div>
+                <div class="split sponsor-stats">
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Location
+                            </label>
+                            <div cc-contenteditable data-cc-contenteditable-placeholder="City, State" data-ng-model="sponsor.location"></div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Type
+                            </label>
+                            <div cc-contenteditable data-cc-contenteditable-placeholder="Type" data-ng-model="sponsor.type"></div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it">
+                            <label>
+                                Number of Deals
+                            </label>
+                            <div cc-contenteditable data-cc-contenteditable-placeholder="Number of Deals" data-ng-model="sponsor.numberOfDeals"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split sponsor-stats">
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                URL
+                            </label>
+                            <div cc-contenteditable data-cc-contenteditable-placeholder="http://" data-ng-model="sponsor.url"></div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it right">
+                            <label cc-contenteditable data-cc-contenteditable-placeholder="Under Management" data-ng-model="sponsor.option0Name" data-ng-class="{'with-default': !!sponsor.option0Name}"></label>
+                            <div cc-contenteditable data-cc-contenteditable-placeholder="Optional Value" data-ng-model="sponsor.option0Value"></div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it">
+                            <label cc-contenteditable data-cc-contenteditable-placeholder="Developed" data-ng-model="sponsor.option1Name"data-ng-class="{'with-default': !!sponsor.option1Name}"></label>
+                            <div cc-contenteditable data-cc-contenteditable-placeholder="Optional Value" data-ng-model="sponsor.option1Value"></div>
+                        </div>
+                    </div>
+                </div>
+                <div cc-contenteditable data-cc-contenteditable-placeholder="Description" data-ng-model="sponsor.description"></div>
+                <div class="team-members relative">
+                    <h2>Team Members<button data-ng-click="addPerson()" data-ng-show="isAdmin && isSaved()" class="btn btn-sm add"><i class="fa fa-plus"></i></button></h2>
+                    <div data-ng-hide="people.length" class="no-hits">
+                        <p>
+                            There are currently no team members.
+                        </p>
+                    </div>
+                    <div class="row match-height" data-ng-repeat="group in peopleGroups">
+                        <div class="col-sm-6 col-md-4" data-ng-repeat="person in group" data-ng-controller="PersonListItemController">
+                            <div class="person item">
+                                <div class="clearfix">
+                                    <button tabindex="-1" data-ng-click="confirmDelete()" data-ng-show="isAdmin" class="btn btn-sm action"><i class="fa fa-minus"></i></button>
+                                    <div data-ng-switch="!!getProfilePictureURL()" class="profile-picture" cc-file-upload="profilePicture">
+                                        <img cc-image="getProfilePictureURL" data-ng-switch-when="true">
+                                        <div data-ng-switch-default="" class="no-picture"><i class="fa fa-camera" data-ng-class="{true: 'fa-spinner fa-spin'}[profilePictureLoading]"></i></div>
+                                    </div>
+                                    <h3 cc-contenteditable data-cc-contenteditable-placeholder="Name" data-ng-model="person.name"></h3>
+                                    <h4 cc-contenteditable data-cc-contenteditable-placeholder="Role" data-ng-model="person.role"></h4>
+                                </div>
+                                <hr>
+                                <div class="bio">
+                                    <p cc-contenteditable data-cc-contenteditable-placeholder="Bio" data-ng-model="person.bio"></p>
+                                </div>
+                                <hr>
+                                <div class="social">
+                                    <a href="http://{{person.linkedinUrl}}" title="LinkedIn Profile" target="_blank" tabindex="-1" class="btn btn-sm linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <div data-ng-show="isAdmin">
+                                        <hr>
+                                        <div cc-contenteditable data-cc-contenteditable-placeholder="http://linkedin.com/path/to/profile" data-ng-model="person.linkedinUrl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="properties relative">
+                    <h2 cc-contenteditable data-cc-contenteditable-placeholder="Featured Properties" data-ng-model="sponsor.sectionHeading" data-ng-class="{'with-default': !!sponsor.sectionHeading}"></h2>
+                    <button data-ng-click="addProperty()" data-ng-show="isAdmin && isSaved()" class="btn btn-sm add"><i class="fa fa-plus"></i></button>
+                    <div data-ng-hide="properties.length" class="no-hits">
+                        <p>
+                            There are currently no featured properties.
+                        </p>
+                    </div>
+                    <div class="row match-height" data-ng-repeat="group in propertyGroups">
+                        <div class="col-sm-6 col-md-4" data-ng-repeat="property in group" data-ng-controller="PropertyListItemController">
+                            <div class="property item">
+                                <button tabindex="-1" data-ng-click="confirmDelete()" data-ng-show="isAdmin" class="btn btn-sm action"><i class="fa fa-minus"></i></button>
+                                <div data-ng-switch="!!getHeroImageURL()" class="property-picture" cc-file-upload="heroImage">
+                                    <img cc-image="getHeroImageURL" data-ng-switch-when="true">
+                                    <div data-ng-switch-default="" class="no-picture"><i class="fa fa-camera" data-ng-class="{true: 'fa-spinner fa-spin'}[heroImageLoading]"></i></div>
+                                </div>
+                                <h3 cc-contenteditable data-cc-contenteditable-placeholder="Name" data-ng-model="property.name"></h3>
+                                <h4 cc-contenteditable data-cc-contenteditable-placeholder="Location" data-ng-model="property.location"></h4>
+                                <hr>
+                                <p cc-contenteditable data-cc-contenteditable-placeholder="Description" data-ng-model="property.description">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

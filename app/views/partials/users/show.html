@@ -1,0 +1,55 @@
+<section class="page user cb-list-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>{{user.firstName}} {{user.lastName}}</h1>
+                <div class="split user-stats">
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Email
+                            </label>
+                            <div><a href="mailto:{{user.email}}" title="Email {{user.firstName}}">{{user.email}}</a></div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Phone
+                            </label>
+                            <div>{{user.phone}}</div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it">
+                            <label>
+                                Accredited Investor
+                            </label>
+                            <div data-ng-switch data-on="user.accreditedInvestor">
+                                <span data-ng-switch-when="true"><i class="fa fa-check"></i> Yes</span>
+                                <span data-ng-switch-default><i class="fa fa-times"></i> No</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>Investments</h1>
+                <div data-ng-switch="!!investments.length">
+                    <div data-ng-switch-when="true">
+                        <ul class="list-unstyled">
+                            <li data-ng-repeat="investment in investments" data-ng-controller="InvestmentListItemController">
+                                <h2><a href="/deals/{{investment.deal._id}}">{{investment.deal.name}}</a></h2>
+                                <h4>${{investment.amount}} &bull; {{getStatus()}}</h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-ng-switch-default="">
+                        <p class="no-hits" >
+                            {{user.firstName}} has not made any investments yet.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

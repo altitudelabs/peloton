@@ -1,0 +1,120 @@
+<section class="page deal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 relative">
+                <h1>{{deal.name}}</h1>
+                <div class="actions">
+                    <div data-ng-switch="isInvested()">
+                        <div data-ng-switch-when="true" class="investment-amount">
+                            <label>Invested</label>
+                            <a href="/dashboard" class="additional-info">${{investment.amount}}</a>
+                        </div>
+                        <div data-ng-switch-default="">
+                            <a href="/deals/{{deal._id}}/invest" data-ng-click="" class="btn" data-ng-disabled="!currentUser.accreditedInvestor" data-ng-class="{disabled: !currentUser.accreditedInvestor}">Invest Now</a>
+                            <a href="/dashboard" data-ng-show="!currentUser.accreditedInvestor" class="additional-info">(View Investment Eligibility Requirements)</a>
+                        </div>
+                    </div>
+                </div>
+                <h2>Stone Mountain, GA &bull; DealPoint Merrill / LTL Investments</h2>
+                <div class="picture">
+                    <img src="/images/icon-deal-0-0.jpg">
+                </div>
+                <div class="split">
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Estimated IRR
+                            </label>
+                            <div>
+                                15 - 17%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Estimated cash-on-cash
+                            </label>
+                            <div>
+                                6 - 10%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it">
+                            <label>
+                                Purchase Type
+                            </label>
+                            <div>
+                                Equity Purchase
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split">
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Type
+                            </label>
+                            <div>
+                                Class B, Multi-family
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it right">
+                            <label>
+                                Hold Period
+                            </label>
+                            <div>
+                                4 - 5 Years
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="box-it">
+                            <label>
+                                Minimum investment
+                            </label>
+                            <div>
+                                $10,000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Investment Summary</h4>
+                <p>
+                    Realty Mogul, along with <a href="#">DealPoint Merill ("DPM") and LTL Investments ("LTL")</a>, is providing the opportunity to invest in The Haverly at Stone Mountain ("Haverly"), a 98% occupied, 360-unit apartment complex in Atlanta, Georgia. The property is located in Stone Mountain, a sub-market of Atlanta and is situated in close proximity to the Stone Mountain outdoor theme park and major transportation routes including Interstate 285, US Highway 78 and State Highway 10.
+                </p>
+                <p>
+                    The primary objective of this investment is to acquire, renovate, operate, and sell the property in 4 to 5 years.
+                </p>
+                <p>
+                    In this transaction, Realty Mogul investors will invest in Realty Mogul 18, LLC. Realty Mogul 18, LLC will subsequently invest in DPM Haverly Apartments, LLC, an entity controlled by DPM and LTL.  DPM Haverly Apartments, LLC will subsequently invest in a tenants in common ("TIC"), holding an undivided fractional interest in the property subject to a common property management agreement.  The TIC has been arranged to allow for incoming 1031 exchange funds.  Distributions are expected on a quarterly basis starting after the first six (6) months of operation.
+                </p>
+                <h4>Property Description</h4>
+                <p>
+                    The complex consists of 26 garden-style apartment buildings along with a clubhouse/leasing office, two (2) swimming pools connected with a waterfall, controlled access gate, four (4) tennis courts, a fitness center and a children's playground located on a 36-acre lot. Constructed in 1980, the complex has been well maintained, recently benefiting from a capital infusion of over $2.0 million in exterior and amenity upgrades.
+                </p>
+                <h4>Location Information</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d212167.3483749768!2d-84.30441572108201!3d33.80934993599745!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5a8dc02e23041%3A0x2ea07f0e82a42f79!2s2700+Summit+Creek+Dr!5e0!3m2!1sen!2sus!4v1396897267864" width="100%" height="500" frameborder="0" style="border:0"></iframe>
+                <p>
+                    The Metropolitan Statistical Area (MSA) for Atlanta has a total population that now exceeds 5.5 million people and has grown 79% since 1990, making it the nation’s ninth-largest MSA and one of its fastest growing. Atlanta is the capital of Georgia and arguably the financial and commercial capital of the southeast.
+                </p>
+                <p>
+                    Haverly is located in DeKalb County, which (with an estimated 2013 population of 709,142 people) is Georgia’s third largest county and also its most densely populated. As one of the five “core” counties at the heart of Atlanta’s MSA, DeKalb houses 10% of the actual City of Atlanta, as well as some of the area’s most historic garden communities. The county has expanded from these urban roots to include a large number of newer, growing suburban districts. Its main municipalities include Decatur (the county seat), Chamblee, Clarkston, Doraville, Dunwoody, Lithonia, Stone Mountain, and Tucker.
+                </p>
+                <p>
+                    Stone Mountain Park, which is one of the nation’s most popular attractions, hosts more than four million visitors annually. Its centerpiece is the world’s largest exposed piece of granite, which also boasts the world’s largest high-relief carving. Visitors can travel to the summit and explore the park’s 3,200 acres of lakes and woodlands. The many attractions include a resort hotel, conference center, railroad, boat rides, adventure and climbing areas, plantation, Civil War museum, laser show, carillon, and “Crossroads,” designed to replicate a small 1870's Southern town. Numerous recreational activities include golf, tennis, fishing, hiking, and camping.
+                </p>
+                <p>
+                    The Atlanta MSA, with 2.3 million employed, provides DeKalb residents with the largest job market in the Southeast. The largest employers in the metro area include Delta Airline, Wal-Mar, AT&T, the U.S. Postal Service, Home Depot, IBM, UPS, Lockheed-Martin, Turner Broadcasting, and SunTrust Banks. Metro Atlanta houses the headquarters of numerous Fortune 500 corporations: The Coca-Cola Company, Coca-Cola Enterprises, Home Depot, UPS, Delta Airlines, The Southern Company, NAPA Genuine Parts, Newell-Rubbermaid, SunTrust Banks, AGCO, NCR, First Data, and RockTenn. Many Atlantans are also employed by federal, state, county, and city governments.  Multiple large county and city school systems, popular retail chains (especially Publix and Kroger), military bases, and hospital/healthcare systems round out the employment picture.
+                </p>
+                <p>
+                    Atlanta is the foremost distribution center in the Southeast due to its central location and excellent transportation network that includes seven interstate highways, Hartsfield-Jackson Atlanta International Airport, and network hubs for the CSX and Norfolk-Southern railroad systems. The city’s accessibility has been the key to its successful growth as a center of business and an international destination for commerce and tourism. This transportation network is a major influence on the continued growth of DeKalb County.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

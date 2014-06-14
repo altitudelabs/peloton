@@ -1,0 +1,26 @@
+<style>
+    .optional-css-class {
+        color:#fff;
+        background-color:black !important;
+    }
+</style>
+
+<div ng-controller="UploadController">
+
+    <input type="text" id="text" ng-model="myModelObj">
+
+    <input type="file" ng-file-select="onFileSelect($files)" >
+
+    <div cc-fileupload style="width:100px;height:100px;background-color:peachpuff" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class"
+         ng-show="dropSupported" ng-controller="UploadController">drop files here</div>
+
+    <div ng-file-drop-available="dropSupported=true"
+         ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+
+
+
+    <button ng-click="upload.abort()">Cancel Upload</button>
+</div>
+
+
+<img cc-fileupload cc-fileupload-entity-id="" cc-fileupload-entity-type="">

@@ -1,0 +1,89 @@
+<section class="page deals cb-list-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Deals</h1>
+                <ul class="list-unstyled">
+                    <li data-ng-repeat="deal in deals">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="picture">
+                                    <img src="/images/icon-deal-0.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <h2>
+                                    <a href="/deals/{{deal._id}}">{{deal.name}}</a>
+                                </h2>
+                                <div class="split">
+                                    <div class="third">
+                                        <div class="box-it right">
+                                            <label>
+                                                Estimated IRR
+                                            </label>
+                                            <div>
+                                                15 - 17%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third">
+                                        <div class="box-it right">
+                                            <label>
+                                                Estimated cash-on-cash
+                                            </label>
+                                            <div>
+                                                6 - 10%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third">
+                                        <div class="box-it">
+                                            <label>
+                                                Purchase Type
+                                            </label>
+                                            <div>
+                                                Equity Purchase
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="split">
+                                    <div class="third">
+                                        <div class="box-it right">
+                                            <label>
+                                                Type
+                                            </label>
+                                            <div>
+                                                Class B, Multi-family
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third">
+                                        <div class="box-it right">
+                                            <label>
+                                                Hold Period
+                                            </label>
+                                            <div>
+                                                4 - 5 Years
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third">
+                                        <div class="box-it">
+                                            <label>
+                                                Minimum investment
+                                            </label>
+                                            <div>
+                                                $10,000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

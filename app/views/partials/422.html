@@ -1,0 +1,35 @@
+<section class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div data-ng-switch="minorCode">
+                    <div data-ng-switch-when="ACTIVATION_KEY_INVALID">
+                        <h1>Invalid Activation Key</h1>
+                        <p>
+                            Your activation key is invalid.
+                        </p>
+                        <p>
+                            Please contact customer support at <a href="mailto:support@crowdbite.co">support@crowdbite.co</a>.
+                        </p>
+                    </div>
+                    <div data-ng-switch-when="ACTIVATION_KEY_EXPIRED">
+                        <h1>Expired Activation Key</h1>
+                        <p>
+                            You activation key has expired.
+                        </p>
+                        <p>
+                            Please contact customer support at <a href="mailto:support@crowdbite.co">support@crowdbite.co</a>.
+                        </p>
+                    </div>
+                    <div data-ng-switch-default="">
+                        <h1>Error</h1>
+                        <p>
+                            We are unable to process your request. Please contact customer support at <a href="mailto:support@crowdbite.co">support@crowdbite.co</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

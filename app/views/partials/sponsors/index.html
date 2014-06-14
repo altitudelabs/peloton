@@ -1,0 +1,34 @@
+<section class="page sponsors">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Sponsors<a href="/sponsors/new" ng-show="isAdmin" class="btn btn-sm add"><i class="fa fa-plus"></i></a></h1>
+                <div class="no-hits" data-ng-hide="sponsors.length">
+                    <p>
+                        There are currently no sponsors.
+                    </p>
+                </div>
+                <div class="row match-height" data-ng-repeat="group in sponsorGroups">
+                    <div class="col-sm-6 col-md-4" data-ng-repeat="sponsor in group" data-ng-controller="SponsorListItemController">
+                        <div class="sponsor-teaser">
+                            <button class="btn btn-sm action" data-ng-click="confirmDelete()" data-ng-show="isAdmin"><i class="fa fa-minus"></i></button>
+                            <div data-ng-switch="!!getHeroImageURL()" class="picture">
+                                <img cc-image="getHeroImageURL" data-ng-switch-when="true">
+                                <div data-ng-switch-default="" class="no-picture"><i class="fa fa-building-o"></i></div>
+                            </div>
+                            <h2>
+                                <span data-ng-switch="{{!!sponsor.name}}">
+                                    <a href="{{sponsorDetailLink}}" data-ng-switch-when="true">{{sponsor.name}}</a>
+                                    <a href="{{sponsorDetailLink}}" data-ng-switch-default="" class="muted" >Sponsor Name</a>
+                                </span>
+                            </h2>
+                            <span data-ng-show="!!sponsor.location">{{sponsor.location}}</span>
+                            <span data-ng-show="!!(sponsor.location && sponsor.type)">&bull;</span>
+                            <span data-ng-show="!!sponsor.type">{{sponsor.type}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

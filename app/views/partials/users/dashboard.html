@@ -1,0 +1,34 @@
+<section class="page cb-list-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>My Investments</h1>
+                <div data-ng-switch="currentUser.accreditedInvestor">
+                    <div data-ng-switch-when="true">
+                        <div data-ng-switch="!!investments.length">
+                            <div data-ng-switch-when="true">
+                                <ul class="list-unstyled">
+                                    <li data-ng-repeat="investment in investments" data-ng-controller="InvestmentListItemController">
+                                        <h2><a href="/deals/{{investment.deal._id}}">{{investment.deal.name}}</a></h2>
+                                        <h4>${{investment.amount}} &bull; {{getStatus()}}</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-ng-switch-default="">
+                                <p class="no-hits" >
+                                    You haven't made any investments yet. <a href="/deals" title="Deals">Click here</a> to view our deals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-ng-switch-default="">
+                        <p class="no-hits">
+                            You are not currently not registered with Peloton Street as an accredited investor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

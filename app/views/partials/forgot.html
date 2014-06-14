@@ -1,0 +1,29 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                <h1>Reset Password</h1>
+                <form name="form" novalidate data-ng-submit="requestResetPassword(form)" class="centered">
+                    <!--[if IE 8]><h5>Email</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="form.email.$error.required && resetRequestSubmitted">
+                        Please enter your email.
+                    </p>
+                    <p class="alert alert-danger" ng-show="form.email.$error.email && resetRequestSubmitted">
+                        Invalid email
+                    </p>
+                    <p class="alert alert-danger" ng-show="form.email.$error.mongoose">{{ errors.email }}</p>
+                    <label for="email">
+                        <i class="fa fa-envelope-o"></i>
+                    </label>
+                    <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email" required mongoose-error/>
+                    <div class="actions">
+                        <button type="submit" class="btn btn-sm">Reset Password</button>
+                    </div>
+                </form>
+                <hr>
+                <p class="margin-bottom-0">Know your password? <a href="/login">Log in</a>.</p>
+                <p>Not registered? <a href="/signup">Click here</a> to get started.</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,77 @@
+<section class="page contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Contact</h1>
+                <div style="position:relative">
+                    <div cc-map="" cc-map-lat="40.743775" cc-map-long="-73.992558" class="map"></div>
+                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12092.50167271541!2d-73.98109771093192!3d40.737265727306706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a4e35993bf%3A0x69f9106d362f2a8f!2s101+W+24th+St+%2312a!5e0!3m2!1sen!2sus!4v1398783166866&" width="100%" height="350" frameborder="0" style="border:0"></iframe>-->
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                       <h4>Visit Us</h4>
+                        <address>
+                            <strong>CrowdBite</strong>
+                            <br>
+                            101 W. 24th Street, Apt. 12A
+                            <br>
+                            New York, NY 10011
+                        </address>
+                        <div class="social">
+                            <h4>Social</h4>
+                            <a class="icon email" href="#" target="_blank"><i class="fa fa-envelope"></i></a>
+                            <a class="icon twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a class="icon facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a class="icon linkedin" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div data-ng-switch="emailSent">
+                            <div data-ng-switch-when="true">
+                                <h4>Thank You!</h4>
+                                <p>
+                                    We'll be in touch shortly.
+                                </p>
+                            </div>
+                            <div data-ng-switch-default="">
+                                <h4>Get In Touch</h4>
+                                <form novalidate name="form" class="centered" data-ng-submit="submitContact(form)">
+                                    <!--[if IE 8]><h5>Name</h5><![endif]-->
+                                    <p class="alert alert-danger" ng-show="form.name.$error.required && submitted">
+                                        Name is required
+                                    </p>
+                                    <label for="name">
+                                        <i class="fa fa-user"></i>
+                                    </label>
+                                    <input type="text" name="name" class="form-control" ng-model="contact.name" placeholder="Name" required />
+                                    <!--[if IE 8]><h5>Email</h5><![endif]-->
+                                    <p class="alert alert-danger" ng-show="form.email.$error.email && submitted">
+                                        Invalid email
+                                    </p>
+                                    <p class="alert alert-danger" ng-show="form.email.$error.required && submitted">
+                                        What's your email address?
+                                    </p>
+                                    <label for="email">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </label>
+                                    <input type="email" name="email" class="form-control" ng-model="contact.email" placeholder="Email" required />
+                                    <!--[if IE 8]><h5>Message</h5><![endif]-->
+                                    <p class="alert alert-danger" ng-show="form.message.$error.required && submitted">
+                                        What would you like to talk to us about?
+                                    </p>
+                                    <label for="message">
+                                        <i class="fa fa-pencil"></i>
+                                    </label>
+                                    <textarea name="message" class="form-control" ng-model="contact.message" placeholder="Message" required></textarea>
+                                    <div class="actions">
+                                        <button type="submit" class="btn btn-sm">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

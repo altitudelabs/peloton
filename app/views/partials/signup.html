@@ -1,0 +1,103 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                <h1>Sign Up</h1>
+                <form name="form" novalidate data-ng-submit="register(form)" class="centered">
+                    <!--[if IE 8]><h5>First Name</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="form.lastName.$error.required && submitted">
+                        First Name is required
+                    </p>
+                    <label for="firstName">
+                        <i class="fa fa-user"></i>
+                    </label>
+                    <input type="text" name="firstName" class="form-control" ng-model="user.firstName" placeholder="First Name" required/>
+                    <!--[if IE 8]><h5>Last Name</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="form.firstName.$error.required && submitted">
+                        Last Name is required
+                    </p>
+                    <label for="lastName">
+                        <i class="fa fa-user"></i>
+                    </label>
+                    <input type="text" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Last Name" required/>
+                    <!--[if IE 8]><h5>Phone</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="form.phone.$error.required && submitted">
+                        Phone is required
+                    </p>
+                    <label for="phone">
+                        <i class="fa fa-phone"></i>
+                    </label>
+                    <input type="text" name="phone" class="form-control" ng-model="user.phone" placeholder="Phone" required/>
+                    <!--[if IE 8]><h5>Email</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="form.email.$error.email && submitted">
+                        Invalid email
+                    </p>
+                    <p class="alert alert-danger" ng-show="form.email.$error.required && submitted">
+                        What's your email address?
+                    </p>
+                    <p class="alert alert-danger" ng-show="form.email.$error.mongoose">
+                        {{ errors.email }}
+                    </p>
+                    <label for="email">
+                        <i class="fa fa-envelope-o"></i>
+                    </label>
+                    <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email" required mongoose-error/>
+                    <!--[if IE 8]><h5>Password</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+                        Password must be at least 3 characters.
+                    </p>
+                    <p class="alert alert-danger" ng-show="form.password.$error.mongoose">
+                        {{ errors.password }}
+                    </p>
+                    <label for="password">
+                        <i class="fa fa-lock"></i>
+                    </label>
+                    <input type="password" name="password" class="form-control last" ng-model="user.password" ng-minlength="3" placeholder="Password" required mongoose-error/>
+                    <!--[if IE 8]><h5>Confirm Password</h5><![endif]-->
+                    <p class="alert alert-danger" ng-show="form.passwordConfirm.$error.passwordMatch && submitted">
+                        Passwords must match.
+                    </p>
+                    <label for="passwordConfirm">
+                        <i class="fa fa-lock"></i>
+                    </label>
+                    <input type="password" name="passwordConfirm" class="form-control last" placeholder="Confirm Password"  ng-model="passwordConfirm" cc-password-confirm/>
+                    <hr>
+                    <p>
+                        We welcome you you to the Peloton Street marketplace. Due to US securities regulations, we need to understand your accreditation status.
+                    </p>
+                    <p>
+                        Please fill out the following form to proceed:
+                    </p>
+                    <hr>
+                    <p class="alert alert-danger" ng-show="form.qualifications.$error.required && submitted">
+                        Please select at least one of the options below.
+                    </p>
+                    <div id="qualifications">
+                        <div data-ng-repeat="qualification in qualifications">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="qualifications" value="{{qualification.value}}" cc-ai-qualification="" qualifications="user.qualifications">{{qualification.description}}
+                                </label>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <p class="alert alert-danger" ng-show="form.agreeTermsConditions.$error.required && submitted">
+                        You must agree to the terms and conditions
+                    </p>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="agreeTermsConditions" ng-model="agreeTermsConditions" value="" required> I agree to the <a href="#">Terms and Conditions</a>
+                        </label>
+                    </div>
+                    <hr>
+                    <div class="actions">
+                        <button type="submit" class="btn btn-sm">Sign Up</button>
+                    </div>
+                </form>
+                <hr>
+                <p>Have an account? <a href="/login">Log in</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
